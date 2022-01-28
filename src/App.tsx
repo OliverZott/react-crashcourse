@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import List from './components/List';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+interface IState {
+	people: {
+		name: string,
+		url: string,
+		age: number,
+		note?: string,
+	}[]
+}
+
+function App () {
+
+	const [people, setPeople] = useState<IState["people"]>([
+		{
+			name: "Sigi",
+			age: 2,
+			url: "https://cdn.unitycms.io/image/ocroped/1200,1200,1000,1000,0,0/FeDbTv4Ozb0/7vrINirQahQ8aciFi80ERm.jpg",
+			note: "Siiiigiiii"
+		}
+	]);
+
+	return (
+		<div className='App'>
+			<h1>People invited to my party</h1>
+			<List people={people} />
+		</div>
+	);
 }
 
 export default App;
