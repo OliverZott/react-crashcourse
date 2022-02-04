@@ -11,16 +11,18 @@ interface IState {
 	}[]
 }
 
-function App () {
+function App() {
 
+	// goal: pass state to component!
 	const [people, setPeople] = useState<IState["people"]>([
 		{
 			name: "Sigi",
-			age: 2,
+			age: 4,
 			url: "https://cdn.unitycms.io/image/ocroped/1200,1200,1000,1000,0,0/FeDbTv4Ozb0/7vrINirQahQ8aciFi80ERm.jpg",
 			note: "Siiiigiiii"
 		}
 	]);
+
 
 	return (
 		<div className='App'>
