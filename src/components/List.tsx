@@ -1,13 +1,6 @@
 import React from "react";
+import { IState as IProps } from "../App";
 
-interface IProps {
-    people: {
-        name: string,
-        url: string,
-        age: number,
-        note?: string,
-    }[]
-}
 
 // pass props to function-component and destruct in function-argument
 const List: React.FC<IProps> = ({ people }) => {
